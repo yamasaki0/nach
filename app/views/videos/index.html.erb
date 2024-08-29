@@ -1,16 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: rgb(247, 89, 116); font-weight: bold;"><%= notice %></p>
 
-<% content_for :title, "Videos" %>
+<h1 style="color: rgb(247, 89, 116); font-weight: 700;">ショーケース</h1>
 
-<h1>Videos</h1>
-
-<div id="videos">
+<div id="videos" class="row" style="margin-top: 20px;">
   <% @videos.each do |video| %>
-    <%= render video %>
-    <p>
-      <%= link_to "Show this video", video %>
-    </p>
+    <div class="col-md-4" style="margin-bottom: 20px;">
+      <div class="card">
+        <%= render video %>
+        <div class="card-body">
+          <h5 class="card-title"><%= video.title %></h5>
+          <p class="card-text"><%= truncate(video.description, length: 100) %></p>
+          <%= link_to "Show this video", video, class: "btn btn-primary", style: "background-color: rgb(247, 89, 116); border-color: rgb(247, 89, 116);" %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New video", new_video_path %>

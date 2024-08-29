@@ -1,12 +1,12 @@
-<% content_for :title, "Editing video" %>
-
-<h1>Editing video</h1>
+<h1 style="color: rgb(247, 89, 116); font-weight: 700; text-align: center;">エディット</h1>
 
 <%= render "form", video: @video %>
 
 <br>
 
 <div>
-  <%= link_to "Show this video", @video %> |
-  <%= link_to "Back to videos", videos_path %>
+  <%= link_to "Show this video", @video ,class: "btn btn-primary", style: "background-color: rgb(247, 89, 116); border-color: rgb(247, 89, 116); margin-right: 10px;" %>
+  <%= link_to "Destroy this video", @video, method: :delete, class: "btn btn-danger", style: "margin-right: 10px;" %>
+  <%= link_to "Back to videos", videos_path, class: "btn btn-secondary", style: "margin-right: 10px;" %>
+
 </div>

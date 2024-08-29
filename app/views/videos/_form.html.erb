@@ -1,32 +1,118 @@
-<%= form_with(model: video) do |form| %>
-  <% if video.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(video.errors.count, "error") %> prohibited this video from being saved:</h2>
 
-      <ul>
-        <% video.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fa;
+        color: #343a40;
+      }
+
+      h2 {
+        color: rgb(247, 89, 116);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+      }
+
+      .form-group .error {
+        color: red;
+        margin-top: 5px;
+      }
+
+      .form-group .error ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .form-group .error li {
+        margin-bottom: 5px;
+      }
+
+      .form-group input[type="file"] {
+        padding: 0;
+      }
+
+      .btn-primary {
+        background-color: rgb(247, 89, 116);
+        border: none;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+        margin: 20px auto;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      .btn-primary:hover {
+        background-color: #e05c6f;
+      }
+    </style>
+
+  <body>
+    <div class="container">
+      <h2><%= video.new_record? ? "Add New Video" : "Edit Video" %></h2>
+
+      <%= form_with(model: video, local: true) do |form| %>
+        <% if video.errors.any? %>
+          <div class="form-group error">
+            <h2><%= pluralize(video.errors.count, "error") %> prohibited this video from being saved:</h2>
+
+            <ul>
+              <% video.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+        <div class="form-group">
+          <%= form.label :title %>
+          <%= form.text_field :title %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :thumbnail %>
+          <%= form.text_field :thumbnail %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :description %>
+          <%= form.text_area :description %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :video %>
+          <%= form.file_field :video %>
+        </div>
+
+        <div class="form-group">
+          <%= form.submit "Save Video", class: "btn-primary" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :thumbnail, style: "display: block" %>
-    <%= form.text_field :thumbnail %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+  </body>
