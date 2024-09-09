@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'videos#index'
+  devise_for :users
+  root 'top#index'
   resources :videos
+  resources :ranks
 end
