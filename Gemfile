@@ -64,3 +64,7 @@ gem "sassc-rails"
 gem 'htmlbeautifier'
 
 gem 'devise'
+
+gem 'carrierwave'
+
+gem 'net-ssh'

@@ -15,7 +15,6 @@ class VideosTest < ApplicationSystemTestCase
     click_on "New video"
 
     fill_in "Description", with: @video.description
-    fill_in "Thumbnail", with: @video.thumbnail
     fill_in "Title", with: @video.title
     click_on "Create Video"
 
@@ -28,7 +27,6 @@ class VideosTest < ApplicationSystemTestCase
     click_on "Edit this video", match: :first
 
     fill_in "Description", with: @video.description
-    fill_in "Thumbnail", with: @video.thumbnail
     fill_in "Title", with: @video.title
     click_on "Update Video"
 

@@ -4,12 +4,8 @@
   <% @videos.each do |video| %>
     <div class="col-md-4" style="margin-bottom: 20px;">
       <div class="card">
-        <%= render video %>
-        <div class="card-body">
-          <h5 class="card-title"><%= video.title %></h5>
-          <p class="card-text"><%= truncate(video.description, length: 100) %></p>
-          <%= link_to "Show this video", video, class: "btn btn-primary", style: "background-color: rgb(247, 89, 116); border-color: rgb(247, 89, 116);" %>
-        </div>
+        <%=link_to image_tag(video.picture_url,class:"card-img-top",style:"text-align:center"),video%>
+        <p style="text-align:center"><%= truncate(video.title, length: 13) %></p>
       </div>
     </div>
   <% end %>

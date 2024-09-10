@@ -14,22 +14,22 @@
         <% end %>
 
         <div class="form-group">
-          <%= form.label :title %>
+          <p>タイトル</p>
           <%= form.text_field :title %>
         </div>
 
         <div class="form-group">
-          <%= form.label :thumbnail %>
-          <%= form.text_field :thumbnail %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :description %>
+          <p>概要欄</p>
           <%= form.text_area :description %>
         </div>
 
         <div class="form-group">
-          <%= form.label :video %>
+          <p>サムネイル画像</p>
+          <%= form.file_field :picture %>
+        </div>
+
+        <div class="form-group">
+          <p>動画ファイル</p>
           <%= form.file_field :video %>
         </div>
 

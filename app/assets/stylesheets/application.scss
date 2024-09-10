@@ -25,8 +25,29 @@ h2 {
     text-shadow: 5px 0px 0px $top-color;
 }
 
+summary {
+    text-align: center;
+    font-family: "Kaisei Decol", serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-style: normal;
+    color: $base-color;
+}
+
+p {
+    font-family: "Kaisei Decol", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: $base-color;
+    font-size: 1.25rem;
+}
+
 .shadow {
     text-shadow: 3px 0px 0px $top-color;
+}
+
+.small-font {
+    font-size: 1rem;
 }
 
 .base-color {

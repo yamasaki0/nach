@@ -1,17 +1,7 @@
 <div id="<%= dom_id video %>">
-  <p>
-    <strong>Title:</strong>
-    <%= video.title %>
-  </p>
-
-  <p>
-    <strong>Thumbnail:</strong>
-    <%= video.thumbnail %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= video.description %>
-  </p>
-
+  <details>
+    <summary><%= video.title %>&nbsp;</summary>
+    <br>
+    <p class="small-font"><%= video.description %></p>
+  </details>
 </div>
